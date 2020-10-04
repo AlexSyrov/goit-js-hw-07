@@ -1,21 +1,11 @@
-// const categList = document.querySelectorAll('.item');
-// for (let i = 0; i < categList.length; i += 1) {
-//   console.log(`В списке ${categList.length} категории.`);
-// }
-
-// const categTitle = document.querySelectorAll('h2');
-
-// categTitle.forEach(element => console.log('Категория:', element.textContent));
-
-// const categEl = document.querySelectorAll('.item ul');
-// categEl.forEach(element =>
-//   console.log('Количество элементов:', element.children.length),
-// );
-
 const categList = document.querySelectorAll('.item');
-console.log(`В списке ${categList.length} категории.`);
+for (let i = 0; i < categList.length; i += 1) {
+  console.log(`В списке ${categList.length} категории.`);
+}
 
-categList.forEach(element =>
-  console.log(`Категория: ${element.firstElementChild.textContent}
-    Количество элементов: ${element.lastElementChild.children.length}`),
-);
+categList.forEach(element => {
+  const title = element.querySelector('h2');
+  const categoriesEl = element.querySelectorAll('li');
+  console.log(`Категория: ${title.textContent}
+  Количество элементов: ${categoriesEl.length}`);
+});
